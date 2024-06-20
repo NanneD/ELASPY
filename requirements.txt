@@ -1,0 +1,9 @@
+pandas==1.4.4
+numpy==1.23.1
+matplotlib==3.5.2
+simpy==4.0.1
+scipy==1.9.3
+pulp==2.7.0
+pytest==7.3.1
+pluggy==1.0.0
+mypy==0.981

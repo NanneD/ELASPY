@@ -1,0 +1,7 @@
+# ignore compiled python 3 files
+__pycache__
+# ignore compiled python 2 files
+*.pyc
+
+# ignore .DS_store files
+.DS_Store

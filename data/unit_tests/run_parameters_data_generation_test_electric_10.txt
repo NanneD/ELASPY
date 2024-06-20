@@ -1,0 +1,18 @@
+SEED_VALUE: 482
+NUM_CALLS: 300
+PROB_GO_TO_HOSPITAL: 0.63
+CALL_LAMBDA: 0.2
+AID_PARAMETERS: [0.38, -10.01, 37.0, 88]
+DROP_OFF_PARAMETERS: [0.39, -8.25, 35.89, 88]
+CRN_GENERATOR: RandomState
+SIMULATION_TYPE: 2021_2022
+SAVE_OUTPUT: True
+DATA_DIRECTORY: /Users/nanne/Documents/Onderzoek/Ambulances/EleAmbu/Data/Processed data/data 2021&2022/
+NODES_FILE: nodes_Utrecht_2021.csv
+OUTPUT_DIRECTORY: /Users/nanne/Documents/Onderzoek/Ambulances/EleAmbu/Data/simulation input data/unit tests/
+INTERARRIVAL_TIMES_FILE: interarrival_times_test_run_simulation_electric_10
+ON_SITE_AID_TIMES_FILE: on_site_aid_times_test_run_simulation_electric_10
+DROP_OFF_TIMES_FILE: drop_off_times_test_run_simulation_electric_10
+LOCATION_IDS_FILE: location_IDs_test_run_simulation_electric_10
+TO_HOSPITAL_FILE: to_hospital_bool_test_run_simulation_electric_10
+RUN_PARAMETERS_FILE_NAME: run_parameters_data_generation_test_electric_10
