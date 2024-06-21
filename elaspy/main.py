@@ -74,9 +74,6 @@ TO_HOSPITAL_FILE : str
     The name of the file that specifies for each patient whether transportation
     to the hospital is required or not if ``LOAD_INPUT_DATA=True``. Otherwise
     it should be ``None``.
-SIMULATION_TYPE : str
-    Specifies whether the "2021_2022" version or "paper_C" version of the data
-    is used.
 NUM_RUNS : int
     The number of simulation runs.
 PROCESS_TYPE : str
