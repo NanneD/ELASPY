@@ -2,15 +2,15 @@
 
 # ELASPY
 
-ELASPY (Electric Ambulance Simulator Python) is a discrete-event simulator of the emergency response process of electric and diesel ambulances built in Python.
+ELASPY (Electric Ambulance Simulator Python) is a discrete-event simulator of the emergency response process of electric and diesel ambulances built in Python. For more information, please visit the ELASPY website: https://nanned.github.io/ELASPY.
 
 ## Installation
 
-For installation instructions, please see: https://NanneD.github.io/ELASPY/Installation.
+For installation instructions, please see: https://nanned.github.io/ELASPY/installation/installation.html.
 
 ## Documentation
 
-For the user guide, including documentation and a quickstart, please see: https://NanneD.github.io/ELASPY/userguide.
+For the user guide, including documentation and a quickstart, please see: https://nanned.github.io/ELASPY/user_guide/userguide.html.
 
 ## Citing
 
