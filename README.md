@@ -15,7 +15,7 @@ For the user guide, including documentation and a quickstart, please see: https:
 ## Citing
 
 If you would like to cite ``ELASPY``, please consider citing the following paper:
-> Nanne A. Dieleman, Caroline Jagtenberg (2024).
+> Nanne A. Dieleman, Caroline J. Jagtenberg (2024).
 > Electric ambulances: will the need for charging affect response times?
 > 
 
@@ -24,10 +24,11 @@ Or, using the following BibTeX entry:
 ```bibtex
 @article{Dieleman_Jagtenberg_2024,
 	title = {Electric ambulances: will the need for charging affect response times?},
-	author = {Dieleman, Nanne A. and Jagtenberg, Caroline},
+	author = {Dieleman, Nanne A. and Jagtenberg, Caroline J.},
 	year = {2024},
         doi = {},
 } 
+```
 
 ## License
 
