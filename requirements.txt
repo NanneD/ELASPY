@@ -7,3 +7,5 @@ pulp==2.7.0
 pytest==7.3.1
 pluggy==1.0.0
 mypy==0.981
+pydata-sphinx-theme==0.15.3
+sphinx-design==0.6.0

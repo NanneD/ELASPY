@@ -16,5 +16,5 @@ dependencies:
   - pandas=1.4.4
   - matplotlib=3.5.2
   - scipy=1.9.3
-  - pydata-sphinx-theme
-  - conda-forge::sphinx-design
+  - pydata-sphinx-theme=0.15.3
+  - conda-forge::sphinx-design=0.6.0

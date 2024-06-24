@@ -1241,7 +1241,8 @@ def check_select_ambulance(
     """
     Checks whether ambulances are available. If so, an ambulance is selected.
 
-    The closest ambulance that can be assigned is selected.
+    The closest ambulance that can be assigned is selected. In case of a tie,
+    the ambulance with the lowest ID number is selected.
 
     Parameters
     ----------
