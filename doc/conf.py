@@ -66,7 +66,7 @@ html_title = "ELASPY"
 html_theme_options = {
     "logo": {
         "alt_text": "ELASPY - Home",
-        "image_light": "_static/ElASPY_light.svg",
+        "image_light": "_static/ELASPY_light.svg",
         "image_dark": "_static/ELASPY_dark.svg",
     },
     "show_prev_next": False,
