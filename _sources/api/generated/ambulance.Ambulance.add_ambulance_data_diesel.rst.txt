@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.add\_ambulance\_data\_diesel
+================================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.add_ambulance_data_diesel

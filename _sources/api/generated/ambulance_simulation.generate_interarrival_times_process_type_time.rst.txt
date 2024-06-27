@@ -1,0 +1,6 @@
+﻿ambulance\_simulation.generate\_interarrival\_times\_process\_type\_time
+========================================================================
+
+.. currentmodule:: ambulance_simulation
+
+.. autofunction:: generate_interarrival_times_process_type_time

@@ -1,0 +1,45 @@
+﻿ambulance.Ambulance
+===================
+
+.. currentmodule:: ambulance
+
+.. autoclass:: Ambulance
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Ambulance.__init__
+      ~Ambulance.add_ambulance_data_battery_decrease
+      ~Ambulance.add_ambulance_data_charging
+      ~Ambulance.add_ambulance_data_diesel
+      ~Ambulance.calculate_battery_increase_until_now
+      ~Ambulance.calculate_battery_reduction_and_distance_driving
+      ~Ambulance.calculate_battery_reduction_idling
+      ~Ambulance.calculate_charging_time
+      ~Ambulance.charge_at_base
+      ~Ambulance.charge_at_drop_off
+      ~Ambulance.charge_at_hospital
+      ~Ambulance.charge_battery
+      ~Ambulance.check_base_reachable
+      ~Ambulance.check_patient_reachable
+      ~Ambulance.decrease_battery
+      ~Ambulance.drop_off_time
+      ~Ambulance.go_to_base_station
+      ~Ambulance.go_to_hospital
+      ~Ambulance.go_to_patient
+      ~Ambulance.increase_battery
+      ~Ambulance.on_site_aid_patient
+      ~Ambulance.process_patient
+      ~Ambulance.select_charging_station
+      ~Ambulance.set_assigned_to_patient
+   
+   
+
+   
+   
+   

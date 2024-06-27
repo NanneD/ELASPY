@@ -1,0 +1,6 @@
+﻿ambulance\_simulation.patient\_arrival
+======================================
+
+.. currentmodule:: ambulance_simulation
+
+.. autofunction:: patient_arrival

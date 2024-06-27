@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.go\_to\_base\_station
+=========================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.go_to_base_station

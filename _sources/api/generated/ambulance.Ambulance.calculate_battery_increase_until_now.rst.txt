@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.calculate\_battery\_increase\_until\_now
+============================================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.calculate_battery_increase_until_now

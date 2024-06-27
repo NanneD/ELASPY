@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.charge\_battery
+===================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.charge_battery
