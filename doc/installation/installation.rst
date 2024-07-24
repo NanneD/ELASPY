@@ -19,7 +19,7 @@ You can easily download all files from the GitHub repository. Follow these steps
    
    cd documents/ELASPY
 
-5. Use an environment manager to create an environment in which you can run the code, such as `Anaconda <https://anaconda.org>`_ or `Miniconda <https://docs.anaconda.com/miniconda/>`_. You can use the following command to create an environment called ``ELASPY`` by using the ``requirements.yml`` file that is also part of your ``ELASPY`` folder:
+5. Use an environment manager to create an environment in which you can run the code, such as `Anaconda <https://anaconda.org>`_ or `Miniconda <https://docs.anaconda.com/miniconda/>`_. You can use the following command to create an environment called ``ELASPY`` by using the ``environment.yml`` file that is also part of your ``ELASPY`` folder:
 
 .. code-block:: shell
 
@@ -51,7 +51,7 @@ Manually
    
    cd documents/ELASPY
 
-5. Use an environment manager to create an environment in which you can run the code, such as `Anaconda <https://anaconda.org>`_ or `Miniconda <https://docs.anaconda.com/miniconda/>`_. You can use the following command to create an environment called ``ELASPY`` by using the ``requirements.yml`` file that can be downloaded from the GitHub repository:
+5. Use an environment manager to create an environment in which you can run the code, such as `Anaconda <https://anaconda.org>`_ or `Miniconda <https://docs.anaconda.com/miniconda/>`_. You can use the following command to create an environment called ``ELASPY`` by using the ``environment.yml`` file that can be downloaded from the GitHub repository:
 
 .. code-block:: shell
 
