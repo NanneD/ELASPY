@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.calculate\_charging\_time
+=============================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.calculate_charging_time

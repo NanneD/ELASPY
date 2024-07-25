@@ -1,0 +1,6 @@
+﻿plot\_functions.hist\_battery\_increase\_decrease
+=================================================
+
+.. currentmodule:: plot_functions
+
+.. autofunction:: hist_battery_increase_decrease

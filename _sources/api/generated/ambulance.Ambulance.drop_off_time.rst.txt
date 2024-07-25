@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.drop\_off\_time
+===================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.drop_off_time

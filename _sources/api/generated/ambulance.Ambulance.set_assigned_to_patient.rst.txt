@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.set\_assigned\_to\_patient
+==============================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.set_assigned_to_patient

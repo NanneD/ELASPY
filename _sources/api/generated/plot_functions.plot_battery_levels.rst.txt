@@ -1,0 +1,6 @@
+﻿plot\_functions.plot\_battery\_levels
+=====================================
+
+.. currentmodule:: plot_functions
+
+.. autofunction:: plot_battery_levels

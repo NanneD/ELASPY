@@ -1,0 +1,6 @@
+﻿input\_output\_functions.calculate\_busy\_fraction
+==================================================
+
+.. currentmodule:: input_output_functions
+
+.. autofunction:: calculate_busy_fraction

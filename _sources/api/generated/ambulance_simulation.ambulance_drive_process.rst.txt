@@ -1,0 +1,6 @@
+﻿ambulance\_simulation.ambulance\_drive\_process
+===============================================
+
+.. currentmodule:: ambulance_simulation
+
+.. autofunction:: ambulance_drive_process

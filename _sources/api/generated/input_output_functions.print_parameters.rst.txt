@@ -1,0 +1,6 @@
+﻿input\_output\_functions.print\_parameters
+==========================================
+
+.. currentmodule:: input_output_functions
+
+.. autofunction:: print_parameters
