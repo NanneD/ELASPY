@@ -8,7 +8,7 @@ ELASPY
 
 ELASPY (Electric Ambulance Simulator Python) is a discrete-event simulator of the emergency response process of electric and diesel ambulances. It is built with Python.
 
-With this simulator, you can analyze the impact of transferring from diesel to electric vehicles. The simulator is developed for urgent patient transport. During a simulation run, patients arrive to which ambulances respond by driving to the patient's site and providing on-site treatment. Afterwards, the patient may or may not have to be brought to the hospital by the ambulance, after which the ambulance returns to its base. For more details on the simulation process, please see the paper by `Dieleman and Jagtenberg <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4874479>`_.
+With this simulator, you can analyze the impact of transferring from diesel to electric vehicles. The simulator is developed for urgent patient transport. During a simulation run, patients arrive to which ambulances respond by driving to the patient's site and providing on-site treatment. Afterwards, the patient may or may not have to be brought to the hospital by the ambulance, after which the ambulance returns to its base. For more details on the simulation process, please see the paper by `Dieleman and Jagtenberg <https://ssrn.com/abstract=4874479>`_.
 
 | **Citing**
 | Please see the README file on the `GitHub repository <https://github.com/NanneD/ELASPY>`_ for a suggested citation.
@@ -16,6 +16,9 @@ With this simulator, you can analyze the impact of transferring from diesel to e
 | **License**
 
 The GNU General Public License v3 (GPL-3) license is used. For more information, please see the `GitHub repository <https://github.com/NanneD/ELASPY>`_.
+
+| **Contributing**
+| Please see the README file on the `GitHub repository <https://github.com/NanneD/ELASPY>`_ for information on how to contribute.
 
 .. grid:: 1 2 2 4
 

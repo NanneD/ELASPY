@@ -9,7 +9,8 @@ The simulator works through the main interface found in ``elaspy/main.py``. All 
 
 IDE Spyder
 ++++++++++
-The IDE Spyder is automatically installed if you installed ELASPY by following the :ref:`installation instructions<installation>`. First, activate the ELASPY environment by using the following command in the command line:
+
+The IDE Spyder is automatically installed if you installed the ``ELASPY`` environment by using the ``environment.yml`` file (see :ref:`installation instructions<installation>`). First, activate the ``ELASPY`` environment by using the following command in the command line (assuming you use `Anaconda <https://anaconda.org>`_ or `Miniconda <https://docs.anaconda.com/miniconda/>`_):
 
 .. code-block:: shell
 

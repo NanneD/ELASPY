@@ -5,6 +5,8 @@
 
 ELASPY (Electric Ambulance Simulator Python) is a discrete-event simulator of the emergency response process of electric and diesel ambulances built in Python. For more information, please visit the ELASPY website: https://nanned.github.io/ELASPY.
 
+The code is written in Python 3.10.8.
+
 ## Installation
 
 For installation instructions, please see: https://nanned.github.io/ELASPY/installation/installation.html.
@@ -18,7 +20,7 @@ For the user guide, including documentation and a quickstart, please see: https:
 If you would like to cite ``ELASPY``, please consider citing the following paper:
 > Nanne A. Dieleman, Caroline J. Jagtenberg (2024).
 > Electric ambulances: will the need for charging affect response times?
-> Available at SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4874479.
+> Preprint available at SSRN: https://ssrn.com/abstract=4874479. doi: 10.2139/ssrn.4874479.
 
 Or, using the following BibTeX entry:
 
@@ -27,8 +29,9 @@ Or, using the following BibTeX entry:
 	title = {Electric ambulances: will the need for charging affect response times?},
 	author = {Dieleman, Nanne A. and Jagtenberg, Caroline J.},
 	year = {2024},
-        url = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4874479},
-} 
+        url = {https://ssrn.com/abstract=4874479},
+	doi = {10.2139/ssrn.4874479},
+}
 ```
 
 ## License
@@ -37,4 +40,19 @@ The GNU General Public License v3 (GPL-3) license is used. For more information,
 
 ## Contributing
 
-If you would like to contribute to the package in any way, please feel free to create an issue and discuss what you would like to add or change.
+If you would like to contribute to ``ELASPY`` in any way, please feel free to create an [issue](https://github.com/NanneD/ELASPY/issues) to discuss what you would like to add or change. Moreover, make sure that your code submission includes:
+- tests
+- type hints
+- documentation
+- docstrings for the added/changed methods, classes, etc. according to the NumPy docstrings format
+
+To check whether the type hints and tests run smoothly, you can follow these steps:
+1. Open the command line and move to the ``ELASPY`` folder.
+2. Run the tests by using the following command:
+```
+pytest elaspy/tests.py
+```
+3. Run the mypy checker by using:
+```
+mypy elaspy/
+```

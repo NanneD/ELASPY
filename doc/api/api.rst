@@ -12,10 +12,10 @@ The API reference of all scripts, methods and classes can be found here.
     ambulance
     ambulancesimulation
     coordinatemethods
+    inputoutputfunctions
     main
     patient
     plotfunctions
-    inputoutputfunctions
 
 .. toctree::
     :maxdepth: 1
