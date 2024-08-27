@@ -8,7 +8,7 @@ Shapefiles were used to create the input data :ref:`NODES_FILE<nodesfile>`. In t
 Data sources
 ++++++++++++
 
-Two different data sets were used, both from the CBS. This is a Dutch organization that provides data sets on many subjects. A data set with `region data <https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/cbs-gebiedsindelingen>`_ and with `postal code data <https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/gegevens-per-postcode>`_ were used.
+Two different data sets were used, both from the CBS. This is a Dutch organization that provides data sets on many subjects. Data sets with `region data <https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/cbs-gebiedsindelingen>`_ and with `postal code data <https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/gegevens-per-postcode>`_ were used.
 
 Loading the data
 ++++++++++++++++

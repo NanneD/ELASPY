@@ -7,7 +7,7 @@ CSV file that contains the data with the distance between nodes (in kilometers).
    :widths: 5 5 5 5
    :header-rows: 1
 
-   * - Node
+   * - postal code
      - 1
      - 2
      - 3

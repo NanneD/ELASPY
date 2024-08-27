@@ -9,7 +9,7 @@ CSV file that contains the data with the travel times between nodes *with siren 
    :widths: 5 5 5 5
    :header-rows: 1
 
-   * - Node
+   * - postal code
      - 1
      - 2
      - 3
