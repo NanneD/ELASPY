@@ -91,5 +91,5 @@ html_css_files = [
 
 favicons = [
    "ELASPY_favicon.svg",
-   {"rel": "apple-touch-icon", "href": "ELASPY_favicon.svg"}
+   {"rel": "apple-touch-icon", "href": "ELASPY_favicon.png"}
 ]
