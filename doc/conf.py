@@ -90,6 +90,6 @@ html_css_files = [
 ]
 
 favicons = [
-   {"rel": "icon", "href": "ELASPY_favicon.png", type: "image/png"},
+   {"rel": "icon", "href": "ELASPY_favicon.png", "type": "image/png"},
    {"rel": "apple-touch-icon", "href": "ELASPY_favicon.png"}
 ]
