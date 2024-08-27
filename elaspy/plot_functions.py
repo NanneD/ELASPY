@@ -15,13 +15,13 @@ def plot_response_times(
     """
     Makes three different plots of the response time data.
 
-    (1) A plot of the response time (y-axis) per patient (x-axis). Saved as
-    "scatter_response_time_{run_nr}.pdf" if ``SAVE_PLOTS=True``.
-    (2) A histogram of the response times. Saved as
-    "histogram_response_time_{run_nr}.pdf" if ``SAVE_PLOTS=True``.
-    (3) A bar plot of the waiting time before assigned and driving time per
-    patient. Saved as "bar_waiting_driving_time_{run_nr}.pdf" if
-    ``SAVE_PLOTS=True``.
+    1. A plot of the response time (y-axis) per patient (x-axis). Saved as
+       "scatter_response_time_{run_nr}.pdf" if ``SAVE_PLOTS=True``.
+    2. A histogram of the response times. Saved as
+       "histogram_response_time_{run_nr}.pdf" if ``SAVE_PLOTS=True``.
+    3. A bar plot of the waiting time before assigned and driving time per
+       patient. Saved as "bar_waiting_driving_time_{run_nr}.pdf" if
+       ``SAVE_PLOTS=True``.
 
     Parameters
     ----------
