@@ -33,14 +33,14 @@ def save_input_parameters(SIMULATION_PARAMETERS: dict[str, Any]) -> None:
     """
     Saves the simulation parameters in a text file.
 
-    The text file is saved in directory SIMULATION_OUTPUT_DIRECTORY with name
-    RUN_PARAMETERS_FILE_NAME.
+    The text file is saved in directory ``SIMULATION_OUTPUT_DIRECTORY`` with
+    name ``RUN_PARAMETERS_FILE_NAME``.
 
     Parameters
     ----------
     SIMULATION_PARAMETERS : dict[str, Any]
         The simulation parameters. The parameters ``SIMULATION_OUTPUT_DIRECTORY``
-        and ``RUN_PARAMETERS_FILE_NAME ``are at least necessary. See
+        and ``RUN_PARAMETERS_FILE_NAME`` are at least necessary. See
         ``main.py`` for parameter explanations.
 
     """
@@ -1114,7 +1114,7 @@ def calculate_busy_fraction(
     """
     Calculates the busy fraction of a simulation run.
 
-    A warm-up period of AT_BOUNDARY and cool-down period of FT_BOUNDARY
+    A warm-up period of ``AT_BOUNDARY`` and cool-down period of ``FT_BOUNDARY``
     is used, which means that the calculation does not consider data before
     the warm-up period and after the cool-down period.
 

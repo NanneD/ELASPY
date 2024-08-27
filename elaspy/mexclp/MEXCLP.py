@@ -15,10 +15,10 @@ NUM_AMBULANCES : int
 TIME_THRESHOLD : float
     Represents the threshold for the driving time in minutes.
 DATA_DIRECTORY : str
-    The folder, relative to the ROOT_DIRECTORY (automatically determined),
+    The folder, relative to the ``ROOT_DIRECTORY`` (automatically determined),
     where the input data is located.
 OUTPUT_DIRECTORY : str
-    The folder, relative to the ROOT_DIRECTORY (automatically determined),
+    The folder, relative to the ``ROOT_DIRECTORY`` (automatically determined),
     where the output files should be saved.
 NODES_FILE : str
     The name of the file that contains the data with the nodes of the region.

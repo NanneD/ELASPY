@@ -43,11 +43,11 @@ class Ambulance:
     ambulance_ID : int
         The ambulance ID.
     charging_since : float
-        The start time of the current charging session. Equal to np.nan if the
-        ambulance is not charging.
+        The start time of the current charging session. Equal to ``np.nan`` if
+        the ambulance is not charging.
     speed_charger : float
         The speed of the charger of the current charging session. Equal to
-        np.nan if the ambulance is not charging.
+        ``np.nan`` if the ambulance is not charging.
 
     """
 
@@ -136,8 +136,8 @@ class Ambulance:
         Raises
         ------
         Exception
-            If the ambulance is driving and charging at the same time.
-            If an invalid ``ENGINE_TYPE`` is specified.
+            1. If the ambulance is driving and charging at the same time.
+            2. If an invalid ``ENGINE_TYPE`` is specified.
 
         Returns
         -------
@@ -329,7 +329,7 @@ class Ambulance:
 
     def set_assigned_to_patient(self) -> None:
         """
-        Sets the assigned_to_patient variable to True.
+        Sets the ``assigned_to_patient`` variable to ``True``.
 
         """
         self.assigned_to_patient = True
@@ -375,7 +375,8 @@ class Ambulance:
         SIMULATION_PARAMETERS : dict[str, Any]
             The simulation parameters. The parameter ``PRINT`` is at least
             necessary. Note that methods that are called within this method
-            may require more parameters. See main.py for parameter explanations.
+            may require more parameters. See ``main.py`` for parameter
+            explanations.
         SIMULATION_DATA : dict[str, Any]
             The simulation data. ``output_patient`` is at least necessary.
             See ``main.py`` and the input data section on the ELASPY website
@@ -385,8 +386,8 @@ class Ambulance:
         Raises
         ------
         Exception
-            (1) If an ambulance is already helping a patient.
-            (2) If more than one patient was assigned to the ambulance.
+            1. If an ambulance is already helping a patient.
+            2. If more than one patient was assigned to the ambulance.
 
         """
 
@@ -917,10 +918,10 @@ class Ambulance:
         Raises
         ------
         Exception
-            If there is a queue at the ambulance resource.
-            If the variable ``drives_to_base`` conflicts with the variables
+            1. If there is a queue at the ambulance resource.
+            2. If the variable ``drives_to_base`` conflicts with the variables
             ``charges``, ``assigned_to_patient`` and/or ``helps_patient``.
-            If an invalid ``ENGINE_TYPE`` is specified.
+            3. If an invalid ``ENGINE_TYPE`` is specified.
 
         Returns
         -------
@@ -1163,9 +1164,9 @@ class Ambulance:
         Parameters
         ----------
         idle : bool
-            Whether the ambulance was idle or not.
+            Whether the ambulance was idle/stationary or not.
         idle_time : Optional[float]
-            The idle time of the ambulance.
+            The idle/stationary time of the ambulance.
         source_location_ID : Optional[int]
             The initial location (i.e., source) of the ambulance.
         target_location_ID : Optional[int]
@@ -1223,9 +1224,9 @@ class Ambulance:
         decrease_quantity : float
             The battery decrease in kWh.
         idle : bool
-            Whether the ambulance was idle or not.
+            Whether the ambulance was idle/stationary or not.
         idle_time : Optional[float]
-            The idle time of the ambulance.
+            The idle/stationary time of the ambulance.
         driven_km : Optional[float]
             The number of kilometers driven.
         source_location_ID : Optional[int]
@@ -1615,7 +1616,7 @@ class Ambulance:
         selected_charger : sp.resources.resource.Resource
             The charger that was selected to use during charging.
         speed_charger : float
-            The speed of the charger (in kW).
+            The speed of the charger in kW.
         required_increase_battery : float
             The required battery increase in kWh.
         charging_location_ID : int
@@ -1636,11 +1637,11 @@ class Ambulance:
         Raises
         ------
         Exception
-            (1) If there is a queue at the ambulance resource.
-            (2) If the variable ``charges`` conflicts with ``drives_to_base``.
-            (3) If the variable ``charges`` conflicts with ``assigned_to_patient``
+            1. If there is a queue at the ambulance resource.
+            2. If the variable ``charges`` conflicts with ``drives_to_base``.
+            3. If the variable ``charges`` conflicts with ``assigned_to_patient``
             and/or ``helps_patient``.
-            (4) If the request was triggered, but the ambulance was not charged.
+            4. If the request was triggered, but the ambulance was not charged.
 
         Return
         ------
@@ -1848,9 +1849,9 @@ class Ambulance:
         Raises
         ------
         Exception
-            (1) If the variable ``charges`` conflicts with ``drives_to_base``.
-            (2) If ``helps_patient`` and/or ``assigned_to_patient`` are not True.
-            (3) If the request was triggered, but the ambulance was not charged.
+            1. If the variable ``charges`` conflicts with ``drives_to_base``.
+            2. If ``helps_patient`` and/or ``assigned_to_patient`` are not True.
+            3. If the request was triggered, but the ambulance was not charged.
 
         """
 
@@ -2092,7 +2093,7 @@ class Ambulance:
         Parameters
         ----------
         idle_time : float
-            The idle time of the ambulance.
+            The idle/stationary time of the ambulance.
         SIMULATION_PARAMETERS : dict[str, Any]
             The simulation parameters. The parameters ``PRINT`` and
             ``IDLE_USAGE`` are at least necessary. See ``main.py`` for
@@ -2101,12 +2102,12 @@ class Ambulance:
         Returns
         -------
         float
-            The battery reduction during idling in kWh.
+            The battery reduction during idling/being stationary in kWh.
 
         """
         if SIMULATION_PARAMETERS["PRINT"]:
             print(
-                f"An idle time of: {idle_time} takes "
+                f"An idle/stationary time of: {idle_time} takes "
                 f"{(idle_time / 60) * SIMULATION_PARAMETERS['IDLE_USAGE']} "
                 "kWh of battery."
             )
@@ -2124,7 +2125,7 @@ class Ambulance:
         required_battery_increase : float
             The required battery increase in kWh.
         speed_charger : float
-            The speed of the charger (in kW).
+            The speed of the charger in kW.
 
         Returns
         -------

@@ -100,15 +100,15 @@ AID_PARAMETERS : list[float | int]
     location parameter , the third the scale parameter and the last the
     cut-off/maximum value.
 DROP_OFF_PARAMETERS : list[float | int]
-    Rhe parameters of the lognormal distribution for the handover time at the
+    The parameters of the lognormal distribution for the handover time at the
     hospital. The first parameter is the sigma parameter, the second the
     location parameter , the third the scale parameter and the last the
     cut-off/maximum value.
 ENGINE_TYPE : str
     The engine type. Either "electric" or "diesel".
 IDLE_USAGE :  float | None
-    The energy consumption when idle in kWh/hour. If ``ENGINE_TYPE="diesel"``
-    it should be ``None``.
+    The energy consumption when idle/stationary in kWh/hour. If
+    ``ENGINE_TYPE="diesel"`` it should be ``None``.
 DRIVING_USAGE :  float | None
     The energy consumption when driving in kWh/km. If ``ENGINE_TYPE="diesel"``
     it should be ``None``.

@@ -298,8 +298,8 @@ def generate_service_times(
     Generates service times from the lognormal distribution.
 
     Note that a new data value is generated until it is between 0
-    and the CUT_OFF value. Only then it is added to the service_times output
-    array.
+    and the ``CUT_OFF`` value. Only then it is added to the service_times
+    output array.
 
     Parameters
     ----------
@@ -318,7 +318,7 @@ def generate_service_times(
 
     Returns
     -------
-    np.ndarray
+    service_times : np.ndarray
         The generated service times.
 
     """
@@ -359,7 +359,7 @@ def generate_interarrival_times_process_type_time(
 
     Returns
     -------
-    np.ndarray
+    interarrival_times : np.ndarray
         The generated interarrival times.
 
     """
@@ -406,8 +406,8 @@ def run_simulation(
     Raises
     ------
     Exception
-        If the patient queue is not empty after completing the simulation run.
-        If the input data (``SIMULATION_DATA``) has been changed during the
+        1. If the patient queue is not empty after completing the simulation run.
+        2. If the input data (``SIMULATION_DATA``) has been changed during the
         simulation run.
 
     """
@@ -748,7 +748,7 @@ def location_generator(
 
     Returns
     -------
-    np.ndarray
+    location_IDs : np.ndarray
         Contains the initial location IDs of the patients.
 
     """
@@ -810,9 +810,9 @@ def patient_arrival(
 
     Returns
     -------
-    int
+    hospital_location_ID : int
         The assigned hospital location ID.
-    Patient
+    new_patient : Patient
         The new Patient object.
 
     """
@@ -883,7 +883,7 @@ def help_waiting_patients(
         The simulation parameters. The parameters ``TIME_AFTER_LAST_ARRIVAL``,
         ``PRINT`` and ``INTERVAL_CHECK_WP`` are at least necessary. Note that
         methods that are called within this method may require more parameters.
-        See``main.py`` for parameter explanations.
+        See ``main.py`` for parameter explanations.
     SIMULATION_DATA : dict[str, Any]
         The simulation data. ``TIME_LAST_ARRIVAL`` is at least necessary. It
         represents the arrival time of the last patient.
@@ -1152,9 +1152,9 @@ def ambulance_drive_process(
     Raises
     ------
     Exception
-        (1) If the base is not reachable, but the ambulance is not at the hospital.
-        (2) If the base is not reachable, but there are no chargers at the hospital.
-        (3) If charging at the hospital is interrupted, since this cannot
+        1. If the base is not reachable, but the ambulance is not at the hospital.
+        2. If the base is not reachable, but there are no chargers at the hospital.
+        3. If charging at the hospital is interrupted, since this cannot
             happen with the implemented check_patient_reachable() method.
 
     """
@@ -1273,9 +1273,9 @@ def check_select_ambulance(
 
     Returns
     -------
-    bool
+    PATIENT_ASSIGNED: bool
         Indicates whether the patient was assigned to an ambulance or not.
-    int
+    ambulance_ID : int
         The ambulance ID of the assigned ambulance. It is -1 if no ambulance
         was assigned.
 

@@ -110,7 +110,7 @@ def select_closest_location_ID(
 
     Returns
     -------
-    int
+    location_ID: int
         The closest location ID.
 
     """

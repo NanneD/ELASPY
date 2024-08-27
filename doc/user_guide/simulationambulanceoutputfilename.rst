@@ -20,9 +20,9 @@ If ``SAVE_DFS=True``, a CSV file is generated where each row represents an ambul
    * - use_or_charge
      - "1" if the battery was charged, "0" if the battery was used.
    * - idle_or_driving_decrease
-     - "1" if the ambulance drove, "0" if the ambulance was idle.
+     - "1" if the ambulance drove, "0" if the ambulance was idle/stationary.
    * - idle_time
-     - The idle time of the ambulance.
+     - The idle/stationary time of the ambulance.
    * - source_location_ID
      - The initial location (i.e., source) of the ambulance.
    * - target_location_ID
