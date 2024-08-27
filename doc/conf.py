@@ -37,6 +37,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "sphinx_design",
+    "sphinx_favicon",
 ]
 
 napoleon_use_rtype = False
@@ -60,7 +61,6 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "pydata_sphinx_theme"
 html_show_sourcelink = False
 html_show_copyright = False
-html_favicon = "_static/ELASPY_favicon.svg"
 html_title = "ELASPY"
 
 html_theme_options = {
@@ -87,4 +87,9 @@ html_static_path = ["_static"]
 
 html_css_files = [
     "css/custom.css",
+]
+
+favicons = [
+   "ELASPY_favicon.svg",
+   {"rel": "apple-touch-icon", "href": "ELASPY_favicon.svg"}
 ]
