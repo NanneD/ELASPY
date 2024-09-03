@@ -20,7 +20,7 @@ For the user guide, including documentation and a quickstart, please see: https:
 If you would like to cite ``ELASPY``, please consider citing the following paper:
 > Nanne A. Dieleman, Caroline J. Jagtenberg (2024).
 > Electric ambulances: will the need for charging affect response times?
-> Preprint available at SSRN: https://ssrn.com/abstract=4874479. doi: 10.2139/ssrn.4874479.
+> Preprint at SSRN: https://ssrn.com/abstract=4874479. doi: 10.2139/ssrn.4874479.
 
 Or, using the following BibTeX entry:
 
@@ -31,6 +31,7 @@ Or, using the following BibTeX entry:
 	year = {2024},
         url = {https://ssrn.com/abstract=4874479},
 	doi = {10.2139/ssrn.4874479},
+        journal = {Preprint at SSRN}
 }
 ```
 

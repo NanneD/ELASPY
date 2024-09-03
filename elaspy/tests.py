@@ -18,7 +18,7 @@ from input_output_functions import calculate_response_time_ecdf
 def test_calculate_charging_time():
     """
     Suppose a car requires A kWh until it has a full battery and that the
-    charging speed is B kWh. The required time (in minutes) to charge until
+    charging speed is B kW. The required time (in minutes) to charge until
     full is equal to A/B*60 (minutes).
     """
 
@@ -73,7 +73,7 @@ def test_run_simulation_electric_4():
     NUM_AMBULANCES = 24
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0
@@ -225,7 +225,7 @@ def test_run_simulation_electric_5():
     NUM_AMBULANCES = 24
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0
@@ -377,7 +377,7 @@ def test_run_simulation_electric_6():
     NUM_AMBULANCES = 24
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0
@@ -529,7 +529,7 @@ def test_run_simulation_electric_7():
     NUM_AMBULANCES = 24
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0
@@ -681,7 +681,7 @@ def test_run_simulation_electric_8():
     NUM_AMBULANCES = 23
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0
@@ -833,7 +833,7 @@ def test_run_simulation_electric_9():
     NUM_AMBULANCES = 23
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0
@@ -985,7 +985,7 @@ def test_run_simulation_electric_10():
     NUM_AMBULANCES = 20
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0
@@ -1137,7 +1137,7 @@ def test_run_simulation_electric_11():
     NUM_AMBULANCES = 20
     AID_PARAMETERS = [88]  # Cut-off value
     ENGINE_TYPE = "electric"
-    IDLE_USAGE = 5  # kWh/hour
+    IDLE_USAGE = 5  # kW
     DRIVING_USAGE = 0.4  # kWh/km
     if ENGINE_TYPE == "electric":
         BATTERY_CAPACITY = 150.0

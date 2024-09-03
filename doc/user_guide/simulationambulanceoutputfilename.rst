@@ -36,7 +36,7 @@ If ``SAVE_DFS=True``, a CSV file is generated where each row represents an ambul
    * - charging_location_ID
      - The charging location ID.
    * - speed_charger
-     - The speed of the charger (in kW).
+     - The speed of the charger in kW.
    * - charging_success
      - "1" if the ambulance could charge, "0" if the ambulance could not charge during the charging session.
    * - waiting_time

@@ -107,7 +107,7 @@ DROP_OFF_PARAMETERS : list[float | int]
 ENGINE_TYPE : str
     The engine type. Either "electric" or "diesel".
 IDLE_USAGE :  float | None
-    The energy consumption when idle/stationary in kWh/hour. If
+    The energy consumption when idle/stationary in kW. If
     ``ENGINE_TYPE="diesel"`` it should be ``None``.
 DRIVING_USAGE :  float | None
     The energy consumption when driving in kWh/km. If ``ENGINE_TYPE="diesel"``
@@ -235,7 +235,7 @@ CALL_LAMBDA: float | None = 1 / 7.75
 AID_PARAMETERS: list[float | int] = [0.38, -10.01, 37.00, 88]
 DROP_OFF_PARAMETERS: list[float | int] | None = [0.39, -8.25, 35.89, 88]
 ENGINE_TYPE: str = "electric"
-IDLE_USAGE: float | None = 5  # kWh/hour
+IDLE_USAGE: float | None = 5  # kW
 DRIVING_USAGE: float | None = 0.4  # kWh/km
 BATTERY_CAPACITY: float
 if ENGINE_TYPE == "electric":

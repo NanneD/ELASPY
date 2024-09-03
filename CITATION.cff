@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Dieleman"
+    given-names: "Nanne A."
+    orcid: "https://orcid.org/0000-0002-2561-2674"
+  - family-names: "Jagtenberg"
+    given-names: "Caroline J."
+    orcid: "https://orcid.org/0000-0002-0742-7707"
+title: "ELASPY"
+url: "https://github.com/NanneD/ELASPY"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Dieleman"
+    given-names: "Nanne A."
+    orcid: "https://orcid.org/0000-0002-2561-2674"
+  - family-names: "Jagtenberg"
+    given-names: "Caroline J."
+    orcid: "https://orcid.org/0000-0002-0742-7707"
+  title: "Electric ambulances: will the need for charging affect response times?"
+  journal: "Preprint at SSRN"
+  year: 2024
+  doi: "10.2139/ssrn.4874479"
