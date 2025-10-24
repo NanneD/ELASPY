@@ -49,7 +49,6 @@ import numpy as np
 import pandas as pd
 
 ################################Directories####################################
-
 ROOT_DIRECTORY: str = os.path.dirname(
     os.path.dirname(os.path.dirname(__file__))
 )
@@ -77,138 +76,139 @@ OUTPUT_FILE_NAME: str = f"result_df_{SCENARIO}.csv"
 OUTPUT_FILE_NAME_2: str = f"remove_location_{SCENARIO}.csv"
 RUN_PARAMETERS_FILE_NAME: str = f"optimization_parser_{SCENARIO}"
 ##############################Save parameters##################################
-start_running_time = datetime.datetime.now()
-if SAVE_OUTPUT:
-    with open(
-        f"{OUTPUT_DIRECTORY}{RUN_PARAMETERS_FILE_NAME}.txt",
-        "w",
-        encoding="utf-8",
-    ) as f:
-        f.write(f"DATA_DIRECTORY: {DATA_DIRECTORY}\n")
-        f.write(f"SIM_RESULTS_DIRECTORY: {SIM_RESULTS_DIRECTORY}\n")
-        f.write(f"OUTPUT_DIRECTORY: {OUTPUT_DIRECTORY}\n")
-        f.write(f"SAVE_OUTPUT: {SAVE_OUTPUT}\n")
-        f.write(f"NUM_RUNS: {NUM_RUNS}\n")
-        f.write(f"SCENARIO: {SCENARIO}\n")
-        f.write(
-            f"SIMULATION_AMBULANCE_OUTPUT_FILE_NAME: {SIMULATION_AMBULANCE_OUTPUT_FILE_NAME}\n"
-        )
-        f.write(f"CHARGING_SCENARIO_FILE: {CHARGING_SCENARIO_FILE}\n")
-        f.write(f"HOSPITAL_FILE: {HOSPITAL_FILE}\n")
-        f.write(
-            f"AMBULANCE_BASE_LOCATIONS_FILE: {AMBULANCE_BASE_LOCATIONS_FILE}\n"
-        )
-        f.write(f"OUTPUT_FILE_NAME: {OUTPUT_FILE_NAME}\n")
-        f.write(f"OUTPUT_FILE_NAME_2: {OUTPUT_FILE_NAME_2}\n")
-        f.write(f"RUN_PARAMETERS_FILE_NAME: {RUN_PARAMETERS_FILE_NAME}\n")
-        f.close()
+if __name__ == "__main__":
+    start_running_time = datetime.datetime.now()
+    if SAVE_OUTPUT:
+        with open(
+            f"{OUTPUT_DIRECTORY}{RUN_PARAMETERS_FILE_NAME}.txt",
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(f"DATA_DIRECTORY: {DATA_DIRECTORY}\n")
+            f.write(f"SIM_RESULTS_DIRECTORY: {SIM_RESULTS_DIRECTORY}\n")
+            f.write(f"OUTPUT_DIRECTORY: {OUTPUT_DIRECTORY}\n")
+            f.write(f"SAVE_OUTPUT: {SAVE_OUTPUT}\n")
+            f.write(f"NUM_RUNS: {NUM_RUNS}\n")
+            f.write(f"SCENARIO: {SCENARIO}\n")
+            f.write(
+                f"SIMULATION_AMBULANCE_OUTPUT_FILE_NAME: {SIMULATION_AMBULANCE_OUTPUT_FILE_NAME}\n"
+            )
+            f.write(f"CHARGING_SCENARIO_FILE: {CHARGING_SCENARIO_FILE}\n")
+            f.write(f"HOSPITAL_FILE: {HOSPITAL_FILE}\n")
+            f.write(
+                f"AMBULANCE_BASE_LOCATIONS_FILE: {AMBULANCE_BASE_LOCATIONS_FILE}\n"
+            )
+            f.write(f"OUTPUT_FILE_NAME: {OUTPUT_FILE_NAME}\n")
+            f.write(f"OUTPUT_FILE_NAME_2: {OUTPUT_FILE_NAME_2}\n")
+            f.write(f"RUN_PARAMETERS_FILE_NAME: {RUN_PARAMETERS_FILE_NAME}\n")
+            f.close()
 
 ################################Reading data###################################
-chargers_df = pd.read_csv(
-    f"{DATA_DIRECTORY}{CHARGING_SCENARIO_FILE}", index_col=0
-)
-hospital_df = pd.read_csv(f"{DATA_DIRECTORY}{HOSPITAL_FILE}").astype(str) + "H"
-base_locations_df = (
-    pd.read_csv(f"{DATA_DIRECTORY}{AMBULANCE_BASE_LOCATIONS_FILE}").astype(str)
-    + "B"
-)
+    chargers_df = pd.read_csv(
+        f"{DATA_DIRECTORY}{CHARGING_SCENARIO_FILE}", index_col=0
+    )
+    hospital_df = pd.read_csv(f"{DATA_DIRECTORY}{HOSPITAL_FILE}").astype(str) + "H"
+    base_locations_df = (
+        pd.read_csv(f"{DATA_DIRECTORY}{AMBULANCE_BASE_LOCATIONS_FILE}").astype(str)
+        + "B"
+    )
 #############################Processing data###################################
-hospitals = list(hospital_df["Hospital"])
-bases = list(base_locations_df["Base"].unique())
+    hospitals = list(hospital_df["Hospital"])
+    bases = list(base_locations_df["Base"].unique())
 
-# Only consider hospitals with chargers
-charger_hospital_df = chargers_df.loc[hospitals]
-filtered_hospitals = list(
-    charger_hospital_df.loc[
-        charger_hospital_df["Number of regular chargers"] > 0
-    ].index
-)
+    # Only consider hospitals with chargers
+    charger_hospital_df = chargers_df.loc[hospitals]
+    filtered_hospitals = list(
+        charger_hospital_df.loc[
+            charger_hospital_df["Number of regular chargers"] > 0
+        ].index
+    )
 
-locations = filtered_hospitals + bases
+    locations = filtered_hospitals + bases
 
-result_df = pd.DataFrame(locations, columns=["Location"])
-result_df["Utilization"] = np.nan
-result_df["Probability"] = np.nan
-result_df["Number of regular chargers"] = np.nan
+    result_df = pd.DataFrame(locations, columns=["Location"])
+    result_df["Utilization"] = np.nan
+    result_df["Probability"] = np.nan
+    result_df["Number of regular chargers"] = np.nan
 
-for index, row in result_df.iterrows():
-    location = row.Location
-    postal_code = int(location[0:4])
-    loc_type = location[4]
+    for index, row in result_df.iterrows():
+        location = row.Location
+        postal_code = int(location[0:4])
+        loc_type = location[4]
 
-    number_of_reg_chargers = chargers_df.loc[location][
-        "Number of regular chargers"
-    ]
+        number_of_reg_chargers = chargers_df.loc[location][
+            "Number of regular chargers"
+        ]
 
-    utilizations = []
-    probabilities = []
+        utilizations = []
+        probabilities = []
 
-    for i in range(NUM_RUNS):
-        ambulance_df = pd.read_csv(
-            f"{SIM_RESULTS_DIRECTORY}{SIMULATION_AMBULANCE_OUTPUT_FILE_NAME}_run_{i}.csv",
-            index_col=0,
-        )
-
-        total_simulation_time = ambulance_df.iloc[-1]["time"]
-
-        if loc_type == "B":
-            selected_data = ambulance_df.loc[
-                (ambulance_df["charging_location_ID"] == postal_code)
-                & (ambulance_df["charging_type"] == 2)
-            ]
-            total_charge_time = selected_data["charging_time"].sum()
-        elif loc_type == "H":
-            selected_data = ambulance_df.loc[
-                (ambulance_df["charging_location_ID"] == postal_code)
-                & (
-                    (ambulance_df["charging_type"] == 0)
-                    | (ambulance_df["charging_type"] == 1)
-                )
-            ]
-            total_charge_time = selected_data["charging_time"].sum()
-        else:
-            raise RuntimeError(
-                "Incorrect value for the location type provided."
+        for i in range(NUM_RUNS):
+            ambulance_df = pd.read_csv(
+                f"{SIM_RESULTS_DIRECTORY}{SIMULATION_AMBULANCE_OUTPUT_FILE_NAME}_run_{i}.csv",
+                index_col=0,
             )
 
-        utilization = total_charge_time / (
-            number_of_reg_chargers * total_simulation_time
-        )
+            total_simulation_time = ambulance_df.iloc[-1]["time"]
 
-        probability = 1 - np.power(utilization, number_of_reg_chargers)
+            if loc_type == "B":
+                selected_data = ambulance_df.loc[
+                    (ambulance_df["charging_location_ID"] == postal_code)
+                    & (ambulance_df["charging_type"] == 2)
+                ]
+                total_charge_time = selected_data["charging_time"].sum()
+            elif loc_type == "H":
+                selected_data = ambulance_df.loc[
+                    (ambulance_df["charging_location_ID"] == postal_code)
+                    & (
+                        (ambulance_df["charging_type"] == 0)
+                        | (ambulance_df["charging_type"] == 1)
+                    )
+                ]
+                total_charge_time = selected_data["charging_time"].sum()
+            else:
+                raise RuntimeError(
+                    "Incorrect value for the location type provided."
+                )
 
-        utilizations.append(utilization)
-        probabilities.append(probability)
+            utilization = total_charge_time / (
+                number_of_reg_chargers * total_simulation_time
+            )
 
-    result_df.at[index, "Utilization"] = np.mean(utilizations)
-    result_df.at[index, "Probability"] = np.mean(probabilities)
-    result_df.at[index, "Number of regular chargers"] = number_of_reg_chargers
+            probability = 1 - np.power(utilization, number_of_reg_chargers)
 
-filter_hospitals_df = result_df[result_df["Location"].str.endswith("H")]
+            utilizations.append(utilization)
+            probabilities.append(probability)
 
-# Only consider bases with more than 1 charger.
-filter_bases_df = result_df[result_df["Location"].str.endswith("B")]
-filter_bases_df = filter_bases_df.loc[
-    filter_bases_df["Number of regular chargers"] > 1
-]
+        result_df.at[index, "Utilization"] = np.mean(utilizations)
+        result_df.at[index, "Probability"] = np.mean(probabilities)
+        result_df.at[index, "Number of regular chargers"] = number_of_reg_chargers
 
-filtered_results_df = pd.concat((filter_hospitals_df, filter_bases_df))
+    filter_hospitals_df = result_df[result_df["Location"].str.endswith("H")]
 
-max_probability_index = filtered_results_df["Probability"].idxmax()
-max_probability_row = filtered_results_df.loc[max_probability_index]
+    # Only consider bases with more than 1 charger.
+    filter_bases_df = result_df[result_df["Location"].str.endswith("B")]
+    filter_bases_df = filter_bases_df.loc[
+        filter_bases_df["Number of regular chargers"] > 1
+    ]
 
-print(
-    f"The location where a charger should be removed is: {max_probability_row['Location']}"
-)
+    filtered_results_df = pd.concat((filter_hospitals_df, filter_bases_df))
 
-if SAVE_OUTPUT:
-    result_df.to_csv(f"{OUTPUT_DIRECTORY}{OUTPUT_FILE_NAME}")
-    pd.DataFrame(
-        {
-            "location_remove_charger": [max_probability_row["Location"]],
-        }
-    ).to_csv(f"{OUTPUT_DIRECTORY}{OUTPUT_FILE_NAME_2}")
+    max_probability_index = filtered_results_df["Probability"].idxmax()
+    max_probability_row = filtered_results_df.loc[max_probability_index]
 
-print(
-    f"The total running time is: {datetime.datetime.now()-start_running_time}"
-)
+    print(
+        f"The location where a charger should be removed is: {max_probability_row['Location']}"
+    )
+
+    if SAVE_OUTPUT:
+        result_df.to_csv(f"{OUTPUT_DIRECTORY}{OUTPUT_FILE_NAME}")
+        pd.DataFrame(
+            {
+                "location_remove_charger": [max_probability_row["Location"]],
+            }
+        ).to_csv(f"{OUTPUT_DIRECTORY}{OUTPUT_FILE_NAME_2}")
+
+    print(
+        f"The total running time is: {datetime.datetime.now()-start_running_time}"
+    )
