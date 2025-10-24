@@ -44,4 +44,8 @@ Simulation runs are saved in the ``results`` folder, but the location can be cha
 
 The simulator requires input data to work. Input data based on the province of Utrecht, the Netherlands, is provided in the `GitHub repository <https://github.com/NanneD/ELASPY>`_. More information on the input data can be found in the :ref:`input data<inputdata>` section.
 
+Optimization
+++++++++++++
+ELASPY can also be used to perform simulation-based optimization. An example in the form of charging station allocation optimization is included in the ``elaspy/optimization_parser.py`` script, also see the :ref:`API<optimizationparserapi>`. We refer to the manuscript for details on this particular simulation-based optimization case.
+
 That's it! Have fun running electric ambulance simulations.

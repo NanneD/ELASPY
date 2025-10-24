@@ -16,6 +16,7 @@ The API reference of all scripts, methods and classes can be found here.
     main
     patient
     plotfunctions
+    optimizationparser
 
 .. toctree::
     :maxdepth: 1
