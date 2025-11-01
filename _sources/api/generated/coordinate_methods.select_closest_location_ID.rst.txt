@@ -1,0 +1,6 @@
+﻿coordinate\_methods.select\_closest\_location\_ID
+=================================================
+
+.. currentmodule:: coordinate_methods
+
+.. autofunction:: select_closest_location_ID

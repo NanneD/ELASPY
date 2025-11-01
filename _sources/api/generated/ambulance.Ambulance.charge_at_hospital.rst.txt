@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.charge\_at\_hospital
+========================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.charge_at_hospital

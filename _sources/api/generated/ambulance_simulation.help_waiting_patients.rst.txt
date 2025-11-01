@@ -1,0 +1,6 @@
+﻿ambulance\_simulation.help\_waiting\_patients
+=============================================
+
+.. currentmodule:: ambulance_simulation
+
+.. autofunction:: help_waiting_patients

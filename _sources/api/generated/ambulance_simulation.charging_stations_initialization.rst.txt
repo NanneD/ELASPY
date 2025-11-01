@@ -1,0 +1,6 @@
+﻿ambulance\_simulation.charging\_stations\_initialization
+========================================================
+
+.. currentmodule:: ambulance_simulation
+
+.. autofunction:: charging_stations_initialization

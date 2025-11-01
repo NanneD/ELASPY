@@ -1,0 +1,6 @@
+﻿plot\_functions.plot\_response\_times
+=====================================
+
+.. currentmodule:: plot_functions
+
+.. autofunction:: plot_response_times

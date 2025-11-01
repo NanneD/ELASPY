@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <link rel="icon" href="../_static/ELASPY_favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../_static/ELASPY_favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../_static/ELASPY_favicon.png" sizes="32x32" type="image/png">
+    <title>Shapefiles to input &#8212; ELASPY</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/shapefilestoinput';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API reference" href="../api/api.html" />
+    <link rel="prev" title="strip_plots.py" href="stripplots.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ELASPY_light.svg" class="logo__image only-light" alt="ELASPY - Home"/>
+    <script>document.write(`<img src="../_static/ELASPY_dark.svg" class="logo__image only-dark" alt="ELASPY - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../installation/installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item current active">
+  <a class="nav-link nav-internal" href="userguide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../api/api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../releases/releases.html">
+    Releases
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NanneD/ELASPY" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../installation/installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item current active">
+  <a class="nav-link nav-internal" href="userguide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../api/api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../releases/releases.html">
+    Releases
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NanneD/ELASPY" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inputdata.html">Input data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="traveltimesfile.html">TRAVEL_TIMES_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distancefile.html">DISTANCE_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodesfile.html">NODES_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hospitalfile.html">HOSPITAL_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baselocationsfile.html">BASE_LOCATIONS_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ambulancebaselocationsfile.html">AMBULANCE_BASE_LOCATIONS_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chargingscenariofile.html">CHARGING_SCENARIO_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interarrivaltimesfile.html">INTERARRIVAL_TIMES_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onsiteaidtimesfile.html">ON_SITE_AID_TIMES_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dropofftimesfile.html">DROP_OFF_TIMES_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locationidsfile.html">LOCATION_IDS_FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tohospitalfile.html">TO_HOSPITAL_FILE</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="outputdata.html">Output data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="runparametersfilename.html">RUN_PARAMETERS_FILE_NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="runningtimefilename.html">RUNNING_TIME_FILE_NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulationprintsfilename.html">SIMULATION_PRINTS_FILE_NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meanresponsetimesfilename.html">MEAN_RESPONSE_TIMES_FILE_NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="empquantileresponsetimesfilename.html">EMP_QUANTILE_RESPONSE_TIMES_FILE_NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="busyfractionsfilename.html">BUSY_FRACTIONS_FILE_NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulationpatientoutputfilename.html">SIMULATION_PATIENT_OUTPUT_FILE_NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulationambulanceoutputfilename.html">SIMULATION_AMBULANCE_OUTPUT_FILE_NAME</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="mexclp.html">MEXCLP</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="advancedplotting.html">Advanced plotting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="advancingperformancemeasuresplot.html">advancing_performance_measures_plot.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batteryplotmruns.html">battery_plot_mruns.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jitterplotsscenarios.html">jitter_plots_scenarios.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scatterplotrtbf.html">scatterplot_rt_bf.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stripplots.html">strip_plots.py</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Shapefiles to input</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="userguide.html" class="nav-link">User guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Shapefiles to input</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="shapefiles-to-input">
+<span id="shapefilestoinput"></span><h1>Shapefiles to input<a class="headerlink" href="#shapefiles-to-input" title="Permalink to this heading">#</a></h1>
+<p>Shapefiles were used to create the input data <a class="reference internal" href="nodesfile.html#nodesfile"><span class="std std-ref">NODES_FILE</span></a>. In this section, the steps are discussed to process the shapefiles. <a class="reference external" href="https://www.qgis.org/en/site/">QGIS</a> was used, but other software could also be suitable.</p>
+<section id="data-sources">
+<h2>Data sources<a class="headerlink" href="#data-sources" title="Permalink to this heading">#</a></h2>
+<p>Two different data sets were used, both from the CBS. This is a Dutch organization that provides data sets on many subjects. Data sets with <a class="reference external" href="https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/cbs-gebiedsindelingen">region data</a> and with <a class="reference external" href="https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/gegevens-per-postcode">postal code data</a> were used.</p>
+</section>
+<section id="loading-the-data">
+<h2>Loading the data<a class="headerlink" href="#loading-the-data" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Create a new QGIS document.</p></li>
+<li><p>Load the geopackage “cbs_pc4_2021_v2.gpkg” and “cbsgebiedsindelingen2021.gpkg”.</p></li>
+<li><p>Add layers “cbs_pc4_2021” and “provincie_gegeneraliseerd” to the map. Layer “provincie_gegeneraliseerd” should be above layer “cbs_pc4_2021” for improved visibility.</p></li>
+</ul>
+</section>
+<section id="creating-a-postal-code-layer-of-a-province">
+<h2>Creating a postal code layer of a province<a class="headerlink" href="#creating-a-postal-code-layer-of-a-province" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Manually select all postal codes of the province you want to consider (such as Utrecht), by selecting all postal codes of layer “cbs_pc4_2021” of that province. Note that you cannot simply create an intersection with “provincie_gegeneraliseerd” as this is cartographically simplified.</p></li>
+<li><p>Save the selection by right clicking on the “cbs_pc4_2021” layer and selecting “export &gt; save selected features as”. Save it with a clear name, such as “province_pc4_2021.gpkg” with “save only selected features” selected. The new layer is then called “province_pc4_2021”.</p></li>
+</ul>
+</section>
+<section id="adding-centroids">
+<h2>Adding centroids<a class="headerlink" href="#adding-centroids" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Go to “processing toolbox &gt; vector geometry &gt; centroids”.</p></li>
+<li><p>Use as input layer “province_pc4_2021.gpkg” and press “run”.</p></li>
+<li><p>Rename the resulting layer to “Centroids”.</p></li>
+<li><p>Save the new layer as geopackage by right clicking on the layer and selecting “make permanent”. You can call it “Centroids”, for example.</p></li>
+</ul>
+</section>
+<section id="adding-centroid-attributes">
+<h2>Adding centroid attributes<a class="headerlink" href="#adding-centroid-attributes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Go to “processing toolbox &gt; vector geometry &gt; add geometry attributes” while having the “Centroids” layer selected.</p></li>
+<li><p>Use “Layer CRS” and call the resulting layer “Centroids_geom”.</p></li>
+<li><p>Save the new layer as geopackage by right clicking the layer and selecting “make permanent”. You can call it “Centroids_geom”, for example.</p></li>
+</ul>
+</section>
+<section id="saving-as-csv-file">
+<h2>Saving as CSV file<a class="headerlink" href="#saving-as-csv-file" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Save the layer “Centroids_geom” as CSV file by right clicking on the layer and selecting “export &gt; save features as”. Select format “Comma Separated Value” [CSV] and the attributes “postcode4”, “aantal inwoners” (number of inhabitants), “xcoord” and “ycoord”. Select the box “add saved file to map”.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources">Data sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-postal-code-layer-of-a-province">Creating a postal code layer of a province</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-centroids">Adding centroids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-centroid-attributes">Adding centroid attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-as-csv-file">Saving as CSV file</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

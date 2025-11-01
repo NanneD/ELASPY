@@ -1,0 +1,6 @@
+﻿input\_output\_functions.calculate\_response\_time\_ecdf
+========================================================
+
+.. currentmodule:: input_output_functions
+
+.. autofunction:: calculate_response_time_ecdf

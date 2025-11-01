@@ -1,0 +1,6 @@
+﻿ambulance\_simulation.initialize\_simulation
+============================================
+
+.. currentmodule:: ambulance_simulation
+
+.. autofunction:: initialize_simulation

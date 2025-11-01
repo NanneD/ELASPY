@@ -1,0 +1,6 @@
+﻿coordinate\_methods.calculate\_new\_coordinate
+==============================================
+
+.. currentmodule:: coordinate_methods
+
+.. autofunction:: calculate_new_coordinate

@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.select\_charging\_station
+=============================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.select_charging_station

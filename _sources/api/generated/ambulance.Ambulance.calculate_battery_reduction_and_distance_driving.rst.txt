@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.calculate\_battery\_reduction\_and\_distance\_driving
+=========================================================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.calculate_battery_reduction_and_distance_driving

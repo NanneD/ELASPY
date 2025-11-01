@@ -1,0 +1,6 @@
+﻿ambulance\_simulation.patient\_generator
+========================================
+
+.. currentmodule:: ambulance_simulation
+
+.. autofunction:: patient_generator

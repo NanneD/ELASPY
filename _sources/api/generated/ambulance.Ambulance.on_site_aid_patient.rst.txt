@@ -1,0 +1,6 @@
+﻿ambulance.Ambulance.on\_site\_aid\_patient
+==========================================
+
+.. currentmodule:: ambulance
+
+.. automethod:: Ambulance.on_site_aid_patient

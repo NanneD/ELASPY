@@ -1,0 +1,22 @@
+﻿patient.Patient
+===============
+
+.. currentmodule:: patient
+
+.. autoclass:: Patient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Patient.__init__
+   
+   
+
+   
+   
+   
